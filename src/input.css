@@ -1,0 +1,21 @@
+@import "tailwindcss";
+.bg-gray-custom {
+  background: #e6e6e6;
+}
+.hwt {
+  font-family: hwt-konop-12-line, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.filosophia {
+  font-family: filosofia-all-small-caps, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+header ul {
+  display: flex;
+}
+
+header ul.active {
+  display: flex;
+}

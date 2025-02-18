@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.typekit.net/swb1pcs.css" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>Marco Goli</title>
+  </head>
+  <body class="bg-white p-5 w-screen h-screen flex flex-col filosophia">
+    <header
+      class="flex items-center justify-between border-2 border-black px-5 py-2 rounded-lg"
+    >
+      <h2 class="hwt uppercase font-bold hwt">Marco <br />Goli</h2>
+      <ul class="underline-none flex uppercase justify-around gap-12">
+        <li
+          class="cursor-pointer text-xl text-gray-500 hover:underline hover:text-black transition-all duration-300 ease-in-out"
+        >
+          <a href="./index.html">A propos</a>
+        </li>
+        <li class="cursor-pointer text-xl underline">graphic design</li>
+        <li
+          class="cursor-pointer text-xl text-gray-500 hover:underline hover:text-black transition-all duration-300 ease-in-out"
+        >
+          <a href="./motion-graphic.html">motion graphic</a>
+        </li>
+        <li
+          class="cursor-pointer text-xl text-gray-500 hover:underline hover:text-black transition-all duration-300 ease-in-out"
+        >
+          <a href="./contact.html">contact</a>
+        </li>
+      </ul>
+      <div class="flex gap-2 items-center">
+        <div
+          class="bg-gray-100 flex items-center justify-start gap-2 px-3 py-1 rounded-full"
+        >
+          <i data-lucide="search" class="w-3"></i>
+          <p class="opacity-75">Search</p>
+        </div>
+        <i data-lucide="heart" class="cursor-pointer w-5"></i>
+        <i data-lucide="Mail" class="cursor-pointer w-5"></i>
+      </div>
+    </header>
+
+    <main class="grow grid grid-cols-4 grid-rows-3 gap-3 mt-5 h-full w-full">
+      <div
+        class="bg-gray-custom col-span-2 row-span-2 p-10 flex flex-col justify-between rounded-xl"
+      >
+        <h2 class="hwt uppercase text-5xl">
+          Mes <br />
+          graphics designs
+        </h2>
+        <p>
+          Double-cliquez sur n'importe quelle affiche pour la voir en plein
+          écran.
+        </p>
+      </div>
+
+      <div
+        class="cursor-pointer relative flex items-end col-span-2 row-span-3 overflow-hidden rounded-xl brooklyn"
+      >
+        <img
+          src="./image/affiche/affiche-brooklyn-vs-bucks.png"
+          class="absolute -z-10 w-full h-full object-cover"
+          alt="brooklyn vs buck image"
+        />
+        <h2 class="uppercase hwt text-white px-5 py-3">#brooklyn vs buck</h2>
+      </div>
+
+      <div
+        class="cursor-pointer relative overflow-hidden flex items-end rounded-xl ninho"
+      >
+        <img
+          src="./image/affiche/cover-ninho.png"
+          class="absolute -z-10 w-full h-full object-cover"
+          alt="cover ninho image"
+        />
+        <h2 class="uppercase hwt text-white px-5 py-3">#cover ninho</h2>
+      </div>
+
+      <div
+        class="cursor-pointer relative overflow-hidden flex items-end rounded-xl kyrie"
+      >
+        <img
+          src="./image/affiche/affiche-kyrie-irving.png"
+          class="absolute -z-10 w-full h-full object-contain bg-[#f3f1ec]"
+          alt="kyrie irving image"
+        />
+        <h2 class="uppercase hwt text-white px-5 py-3">#kyrie irving</h2>
+      </div>
+    </main>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="./javascript/image-full.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
