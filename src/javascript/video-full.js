@@ -1,74 +1,61 @@
-const valentino = document.querySelector(".valentino");
-
-valentino.addEventListener("dblclick", () => {
+function toggleFullscreen(element) {
   const fullscreenElement =
     document.fullscreenElement || document.webkitFullscreenElement;
 
-  if (!fullscreenElement) {
-    if (valentino.requestFullscreen) {
-      valentino.requestFullscreen();
-    } else if (valentino.webkitRequestFullscreen) {
-      valentino.webkitRequestFullscreen();
+  const video = element.querySelector("video");
+  const description = element.querySelector(".description");
+  const title = element.querySelector(".title");
+
+  if (fullscreenElement !== element) {
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.webkitRequestFullscreen) {
+      element.webkitRequestFullscreen();
     }
-    valentino.querySelector("video").muted = false;
-    valentino.querySelector("video").controls = true;
+
+    video.muted = false;
+    video.controls = true;
+    video.volume = 0.25;
+
+    if (description) {
+      description.classList.add("visible");
+      description.classList.remove("fade-out");
+
+      setTimeout(() => {
+        if (document.fullscreenElement === element) {
+          description.classList.add("fade-out");
+
+          setTimeout(() => {
+            description.classList.remove("visible", "fade-out");
+          }, 1000);
+        }
+      }, 10000);
+    }
+
+    if (title) {
+      title.classList.add("hidden");
+    }
   } else {
     if (document.exitFullscreen) {
       document.exitFullscreen();
     } else if (document.webkitExitFullscreen) {
       document.webkitExitFullscreen();
     }
-    valentino.querySelector("video").muted = true;
-    valentino.querySelector("video").controls = false;
+
+    video.muted = true;
+    video.controls = false;
+
+    if (description) {
+      description.classList.remove("visible", "fade-out");
+    }
+
+    if (title) {
+      title.classList.remove("hidden");
+    }
   }
-});
-
-const silent = document.querySelector(".silent");
-
-silent.addEventListener("dblclick", () => {
-  const fullscreenElement =
-    document.fullscreenElement || document.webkitFullscreenElement;
-
-  if (!fullscreenElement) {
-    if (silent.requestFullscreen) {
-      silent.requestFullscreen();
-    } else if (silent.webkitRequestFullscreen) {
-      silent.webkitRequestFullscreen();
-    }
-    silent.querySelector("video").muted = false;
-    silent.querySelector("video").controls = true;
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    }
-    silent.querySelector("video").muted = true;
-    silent.querySelector("video").controls = false;
-  }
-});
-
-const ville = document.querySelector(".ville");
-
-ville.addEventListener("dblclick", () => {
-  const fullscreenElement =
-    document.fullscreenElement || document.webkitFullscreenElement;
-
-  if (!fullscreenElement) {
-    if (ville.requestFullscreen) {
-      ville.requestFullscreen();
-    } else if (ville.webkitRequestFullscreen) {
-      ville.webkitRequestFullscreen();
-    }
-    ville.querySelector("video").muted = false;
-    ville.querySelector("video").controls = true;
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    }
-    ville.querySelector("video").muted = true;
-    ville.querySelector("video").controls = false;
-  }
+}
+document.querySelectorAll(".valentino, .silent, .ville").forEach((element) => {
+  element.addEventListener("dblclick", function () {
+    toggleFullscreen(this);
+  });
 });

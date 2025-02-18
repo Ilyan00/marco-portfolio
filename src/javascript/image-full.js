@@ -1,14 +1,34 @@
-const brooklyn = document.querySelector(".brooklyn");
-
-brooklyn.addEventListener("dblclick", () => {
+function toggleFullscreen(element) {
   const fullscreenElement =
     document.fullscreenElement || document.webkitFullscreenElement;
 
-  if (!fullscreenElement) {
-    if (brooklyn.requestFullscreen) {
-      brooklyn.requestFullscreen();
-    } else if (brooklyn.webkitRequestFullscreen) {
-      brooklyn.webkitRequestFullscreen();
+  const description = element.querySelector(".description");
+  const title = element.querySelector(".title");
+
+  if (fullscreenElement !== element) {
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.webkitRequestFullscreen) {
+      element.webkitRequestFullscreen();
+    }
+
+    if (description) {
+      description.classList.add("visible");
+      description.classList.remove("fade-out");
+
+      setTimeout(() => {
+        if (document.fullscreenElement === element) {
+          description.classList.add("fade-out");
+
+          setTimeout(() => {
+            description.classList.remove("visible", "fade-out");
+          }, 1000);
+        }
+      }, 10000);
+    }
+
+    if (title) {
+      title.classList.add("hidden");
     }
   } else {
     if (document.exitFullscreen) {
@@ -16,47 +36,18 @@ brooklyn.addEventListener("dblclick", () => {
     } else if (document.webkitExitFullscreen) {
       document.webkitExitFullscreen();
     }
-  }
-});
 
-const ninho = document.querySelector(".ninho");
-
-ninho.addEventListener("dblclick", () => {
-  const fullscreenElement =
-    document.fullscreenElement || document.webkitFullscreenElement;
-
-  if (!fullscreenElement) {
-    if (ninho.requestFullscreen) {
-      ninho.requestFullscreen();
-    } else if (ninho.webkitRequestFullscreen) {
-      ninho.webkitRequestFullscreen();
+    if (description) {
+      description.classList.remove("visible", "fade-out");
     }
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
+
+    if (title) {
+      title.classList.remove("hidden");
     }
   }
-});
-
-const kyrie = document.querySelector(".kyrie");
-
-kyrie.addEventListener("dblclick", () => {
-  const fullscreenElement =
-    document.fullscreenElement || document.webkitFullscreenElement;
-
-  if (!fullscreenElement) {
-    if (kyrie.requestFullscreen) {
-      kyrie.requestFullscreen();
-    } else if (kyrie.webkitRequestFullscreen) {
-      kyrie.webkitRequestFullscreen();
-    }
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    }
-  }
+}
+document.querySelectorAll(".brooklyn, .ninho, .kyrie").forEach((element) => {
+  element.addEventListener("dblclick", function () {
+    toggleFullscreen(this);
+  });
 });

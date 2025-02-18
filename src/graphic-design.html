@@ -7,11 +7,29 @@
     <link href="./output.css" rel="stylesheet" />
     <title>Marco Goli</title>
   </head>
+  <style>
+    .description {
+      transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .description.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .description.fade-out {
+      opacity: 0;
+    }
+  </style>
   <body class="bg-white p-5 w-screen h-screen flex flex-col filosophia">
     <header
       class="flex items-center justify-between border-2 border-black px-5 py-2 rounded-lg"
     >
-      <h2 class="hwt uppercase font-bold hwt">Marco <br />Goli</h2>
+      <h2 class="hwt uppercase font-bold hwt text-center">
+        By Marco <br />Goli
+      </h2>
       <ul class="underline-none flex uppercase justify-around gap-12">
         <li
           class="cursor-pointer text-xl text-gray-500 hover:underline hover:text-black transition-all duration-300 ease-in-out"
@@ -50,7 +68,7 @@
           Mes <br />
           graphics designs
         </h2>
-        <p>
+        <p class="text-lg">
           Double-cliquez sur n'importe quelle affiche pour la voir en plein
           écran.
         </p>
@@ -64,7 +82,16 @@
           class="absolute -z-10 w-full h-full object-cover"
           alt="brooklyn vs buck image"
         />
-        <h2 class="uppercase hwt text-white px-5 py-3">#brooklyn vs buck</h2>
+        <h2 class="uppercase hwt text-stone-600 px-5 py-3 title">#affiche</h2>
+        <div
+          class="absolute top-0 description text-xl p-5 rounded-md text-white backdrop-blur-xl bg-black/25 w-1/5 h-fit text-start select-none"
+        >
+          <p>
+            Cette troisième affiche, réalisé dans le cadre d'un projet scolaire,
+            est une présentation d'une des futurs rencontres de basketball
+            présentant les Nets contre les Bucks.
+          </p>
+        </div>
       </div>
 
       <div
@@ -75,7 +102,17 @@
           class="absolute -z-10 w-full h-full object-cover"
           alt="cover ninho image"
         />
-        <h2 class="uppercase hwt text-white px-5 py-3">#cover ninho</h2>
+        <h2 class="uppercase hwt text-stone-300 px-5 py-3 title">#cover</h2>
+        <div
+          class="absolute top-0 description text-xl p-5 rounded-md text-white backdrop-blur-xl bg-black/25 w-1/5 h-fit text-start select-none"
+        >
+          <p>
+            Voici l'un de mes projets perso que j'ai réalisé, il s'agit d'une
+            couverture d'album du rappeur Ninho que j'ai imaginé pour
+            potentiellement l'un de ces futurs albums, j'ai repris l'univers de
+            ce dernier et j'y ai ajouté ma touche personnelle.
+          </p>
+        </div>
       </div>
 
       <div
@@ -86,7 +123,16 @@
           class="absolute -z-10 w-full h-full object-contain bg-[#f3f1ec]"
           alt="kyrie irving image"
         />
-        <h2 class="uppercase hwt text-white px-5 py-3">#kyrie irving</h2>
+        <h2 class="uppercase hwt text-stone-500 p-3 title">#Poster</h2>
+        <div
+          class="absolute top-0 description text-xl p-5 rounded-md text-white backdrop-blur-xl bg-black/25 w-1/5 h-fit text-start select-none"
+        >
+          <p>
+            Ce poster fait l'objet de l'un de mes travaux personnels également,
+            représentant le joueur de basketball Kyrie Irving et le fin de son
+            parcours au sein des Brooklyn Nets.
+          </p>
+        </div>
       </div>
     </main>
     <script src="https://unpkg.com/lucide@latest"></script>

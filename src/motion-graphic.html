@@ -7,11 +7,29 @@
     <link href="./output.css" rel="stylesheet" />
     <title>Marco Goli</title>
   </head>
+  <style>
+    .description {
+      transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .description.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .description.fade-out {
+      opacity: 0;
+    }
+  </style>
   <body class="bg-white p-5 w-screen h-screen flex flex-col filosophia">
     <header
       class="flex items-center justify-between border-2 border-black px-5 py-2 rounded-lg"
     >
-      <h2 class="hwt uppercase font-bold hwt">Marco <br />Goli</h2>
+      <h2 class="hwt uppercase font-bold hwt text-center">
+        By Marco <br />Goli
+      </h2>
       <ul class="underline-none flex uppercase justify-around gap-12">
         <li
           class="cursor-pointer text-xl text-gray-500 hover:underline hover:text-black transition-all duration-300 ease-in-out"
@@ -50,7 +68,7 @@
           Mes <br />
           motions graphics
         </h2>
-        <p>
+        <p class="text-lg">
           Double-cliquez sur n'importe quelle vidéo pour la voir en plein écran.
         </p>
       </div>
@@ -65,7 +83,17 @@
           muted="true"
           loop="true"
         ></video>
-        <h2 class="uppercase hwt text-white px-5 py-3">#pub valentino</h2>
+        <h2 class="uppercase hwt text-white px-5 py-3 title">#pub valentino</h2>
+        <div
+          class="absolute top-0 description text-xl p-5 rounded-md text-white backdrop-blur-xl bg-black/25 w-1/5 h-fit text-start select-none"
+        >
+          <p>
+            J'ai réalisé cette vidéo dans le cadre d'un projet personnel, elle
+            est présenté sous forme de pub pour promouvoir comme vous pouvez le
+            voir, le parfum Born In Roma de la marque Valentino que j'ai
+            effectuer sur Cinéma 4D.
+          </p>
+        </div>
       </div>
 
       <div
@@ -78,7 +106,18 @@
           muted="true"
           loop="true"
         ></video>
-        <h2 class="uppercase hwt text-white px-5 py-3">#silent scream</h2>
+        <h2 class="uppercase hwt text-white px-5 py-3 title">#silent scream</h2>
+        <div
+          class="absolute top-0 description text-xl p-5 rounded-md text-white backdrop-blur-xl bg-black/25 w-1/5 h-fit text-start select-none"
+        >
+          <p>
+            Voici une des bande annonce que j'ai réalisé pour un travail
+            scolaire ou il était demandé de réalisé un teaser à propos d'une
+            affiche de film, j'ai choisi alors le domaine de l'horreur que
+            j'affectionne particulièrement et j'ai ainsi ajouté l'ambiance et
+            les effets appropriés.
+          </p>
+        </div>
       </div>
 
       <div
@@ -91,7 +130,16 @@
           muted="true"
           loop="true"
         ></video>
-        <h2 class="uppercase hwt text-white px-5 py-3">#Ville unreal</h2>
+        <h2 class="uppercase hwt text-white px-5 py-3 title">#Ville unreal</h2>
+        <div
+          class="absolute top-0 description text-xl p-5 rounded-md text-white backdrop-blur-xl bg-black/25 w-1/5 h-fit text-start select-none"
+        >
+          <p>
+            Ce petit teaser fait l'objet de ma semaine scolaire sur le logiciel
+            Unreal, je devais créer une ville et ainsi réalisé un teaser de
+            cette ville.
+          </p>
+        </div>
       </div>
     </main>
     <script src="https://unpkg.com/lucide@latest"></script>
