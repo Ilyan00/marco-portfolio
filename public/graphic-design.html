@@ -22,69 +22,142 @@
     .description.fade-out {
       opacity: 0;
     }
+
+    @media (max-width: 768px) {
+      .description {
+        position: relative !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        background: rgba(0, 0, 0, 0.8) !important;
+        backdrop-filter: none !important;
+        width: 100% !important;
+        margin-top: 1rem;
+      }
+    }
   </style>
-  <body class="bg-white p-5 w-screen h-screen flex flex-col filosophia">
+  <body
+    class="bg-white p-2 sm:p-5 w-screen min-h-screen flex flex-col filosophia"
+  >
     <header
-      class="flex items-center justify-between border-2 border-black px-5 py-2 rounded-lg"
+      class="flex items-center justify-between border-2 border-black px-3 sm:px-5 py-2 rounded-lg"
     >
-      <h2 class="hwt uppercase font-bold hwt text-center">
+      <h2
+        class="hwt uppercase font-bold text-xs sm:text-sm md:text-base text-center"
+      >
         By Marco <br />Goli
       </h2>
-      <ul class="underline-none flex uppercase justify-around gap-12">
+
+      <!-- Desktop Navigation -->
+      <ul
+        class="hidden md:flex underline-none uppercase justify-around gap-4 xl:gap-12"
+      >
         <li
-          class="cursor-pointer text-xl text-gray-500 hover:underline hover:text-black transition-all duration-300 ease-in-out"
+          class="hidden md:block cursor-pointer text-sm xl:text-xl text-gray-500 hover:underline hover:text-black transition-all duration-300 ease-in-out"
         >
           <a href="./index.html">A propos</a>
         </li>
-        <li class="cursor-pointer text-xl underline">graphic design</li>
+        <li class="hidden md:block cursor-pointer text-sm xl:text-xl underline">
+          graphic design
+        </li>
         <li
-          class="cursor-pointer text-xl text-gray-500 hover:underline hover:text-black transition-all duration-300 ease-in-out"
+          class="hidden md:block cursor-pointer text-sm xl:text-xl text-gray-500 hover:underline hover:text-black transition-all duration-300 ease-in-out"
         >
           <a href="./motion-graphic.html">motion graphic</a>
         </li>
         <li
-          class="cursor-pointer text-xl text-gray-500 hover:underline hover:text-black transition-all duration-300 ease-in-out"
+          class="hidden md:block cursor-pointer text-sm xl:text-xl text-gray-500 hover:underline hover:text-black transition-all duration-300 ease-in-out"
         >
           <a href="./contact.html">contact</a>
         </li>
       </ul>
-      <div class="flex gap-2 items-center">
+
+      <!-- Mobile Navigation Button -->
+      <button class="md:hidden flex flex-col gap-1 p-2" id="mobile-menu-btn">
+        <span class="w-5 h-0.5 bg-black transition-all duration-300"></span>
+        <span class="w-5 h-0.5 bg-black transition-all duration-300"></span>
+        <span class="w-5 h-0.5 bg-black transition-all duration-300"></span>
+      </button>
+
+      <div class="hidden md:flex gap-2 items-center">
         <div
-          class="bg-gray-100 flex items-center justify-start gap-2 px-3 py-1 rounded-full"
+          class="hidden md:flex bg-gray-100 items-center justify-start gap-2 px-3 py-1 rounded-full"
         >
           <i data-lucide="search" class="w-3"></i>
-          <p class="opacity-75">Search</p>
+          <p class="opacity-75 text-xs sm:text-sm">Search</p>
         </div>
-        <i data-lucide="heart" class="cursor-pointer w-5"></i>
-        <i data-lucide="Mail" class="cursor-pointer w-5"></i>
+        <i
+          data-lucide="heart"
+          class="hidden md:block cursor-pointer w-4 sm:w-5"
+        ></i>
+        <i
+          data-lucide="Mail"
+          class="hidden md:block cursor-pointer w-4 sm:w-5"
+        ></i>
       </div>
     </header>
 
-    <main class="grow grid grid-cols-4 grid-rows-3 gap-3 mt-5 h-full w-full">
+    <!-- Mobile Navigation Menu -->
+    <nav
+      class="md:hidden hidden bg-white border border-gray-200 rounded-lg mt-2 p-4"
+      id="mobile-menu"
+    >
+      <ul class="flex flex-col gap-4 uppercase">
+        <li
+          class="cursor-pointer text-lg text-gray-500 hover:underline hover:text-black transition-all duration-300 ease-in-out border-b pb-2"
+        >
+          <a href="./index.html">A propos</a>
+        </li>
+        <li class="cursor-pointer text-lg underline border-b pb-2">
+          graphic design
+        </li>
+        <li
+          class="cursor-pointer text-lg text-gray-500 hover:underline hover:text-black transition-all duration-300 ease-in-out border-b pb-2"
+        >
+          <a href="./motion-graphic.html">motion graphic</a>
+        </li>
+        <li
+          class="cursor-pointer text-lg text-gray-500 hover:underline hover:text-black transition-all duration-300 ease-in-out"
+        >
+          <a href="./contact.html">contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main
+      class="grow grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-3 mt-3 sm:mt-5 h-full w-full"
+    >
+      <!-- Introduction Section -->
       <div
-        class="bg-gray-custom col-span-2 row-span-2 p-10 flex flex-col justify-between rounded-xl"
+        class="bg-gray-custom md:col-span-2 md:row-span-2 p-6 sm:p-8 md:p-10 flex flex-col justify-between rounded-xl min-h-[250px] md:min-h-0"
       >
-        <h2 class="hwt uppercase text-5xl">
+        <h2
+          class="hwt uppercase text-2xl sm:text-3xl md:text-4xl xl:text-5xl mb-4 md:mb-0"
+        >
           Mes <br />
           graphic design
         </h2>
-        <p class="text-lg">
+        <p class="text-sm sm:text-base md:text-lg leading-relaxed">
           Double-cliquez sur n'importe quelle affiche pour la voir en plein
           écran.
         </p>
       </div>
 
+      <!-- Joker Project -->
       <div
-        class="cursor-pointer relative flex items-end col-span-2 row-span-3 overflow-hidden rounded-xl brooklyn"
+        class="cursor-pointer relative flex flex-col md:flex-col-reverse md:items-end md:col-span-2 md:row-span-3 overflow-hidden rounded-xl brooklyn min-h-[400px] md:min-h-0"
       >
         <img
           src="./src/image/affiche/Jocker_affiche.jpg"
-          class="absolute -z-10 w-full h-full object-contain bg-black"
+          class="absolute md:-z-10 w-full h-full object-contain bg-black"
           alt="Joker affiche image"
         />
-        <h2 class="uppercase hwt text-white px-5 py-3 title">#Joker</h2>
+        <h2
+          class="md:absolute uppercase hwt text-white px-3 sm:px-5 py-2 sm:py-3 title text-lg sm:text-xl md:text-base xl:text-lg z-10"
+        >
+          #Joker
+        </h2>
         <div
-          class="absolute top-0 description text-xl p-6 text-white backdrop-blur-lg bg-white/10 w-1/5 h-fit shadow-lg select-none rounded-lg"
+          class="description text-sm sm:text-base md:text-xl p-4 md:p-6 text-white backdrop-blur-lg bg-white/10 md:w-1/5 md:h-fit shadow-lg select-none rounded-lg md:absolute md:top-0"
         >
           <p>
             Création graphique inspirée du personnage iconique du Joker. Ce
@@ -94,54 +167,97 @@
         </div>
       </div>
 
+      <!-- Alive Project -->
       <div
-        class="cursor-pointer relative overflow-hidden flex items-end rounded-xl ninho"
+        class="cursor-pointer relative flex flex-col md:flex-col-reverse md:items-end overflow-hidden rounded-xl ninho min-h-[350px] md:min-h-0"
       >
         <img
           src="./src/image/affiche/Affiche_alive.jpg"
-          class="absolute -z-10 w-full h-full object-contain bg-[#441f1c]"
+          class="absolute md:-z-10 w-full h-full object-contain bg-[#441f1c]"
           alt="cover ninho image"
         />
-        <h2 class="uppercase hwt text-stone-300 px-5 py-3 title">#alive</h2>
+        <h2
+          class="md:absolute uppercase hwt text-stone-300 px-3 sm:px-5 py-2 sm:py-3 title text-lg sm:text-xl md:text-base xl:text-lg z-10"
+        >
+          #alive
+        </h2>
         <div
-          class="absolute top-0 description text-xl p-6 text-white backdrop-blur-lg bg-white/10 w-1/5 h-fit shadow-lg select-none rounded-lg"
+          class="description text-sm sm:text-base md:text-xl p-4 md:p-6 text-white backdrop-blur-lg bg-white/10 md:w-1/5 md:h-fit shadow-lg select-none rounded-lg md:absolute md:top-0"
         >
           <p>
             Affiche de style horrifique et post-apocalyptique réalisée autour
-            d’un personnage mi-humain, mi-machine, au regard figé entre peur et
+            d'un personnage mi-humain, mi-machine, au regard figé entre peur et
             mystère. La texture de peau décomposée, les tons terreux et
-            rouillés, ainsi que l’ambiance visuelle crasseuse évoquent un monde
-            en ruine où la frontière entre vivant et artificiel s’est effondrée.
+            rouillés, ainsi que l'ambiance visuelle crasseuse évoquent un monde
+            en ruine où la frontière entre vivant et artificiel s'est effondrée.
           </p>
         </div>
       </div>
 
+      <!-- Mr Grimes Project -->
       <div
-        class="cursor-pointer relative overflow-hidden flex items-end rounded-xl kyrie"
+        class="cursor-pointer relative flex flex-col md:flex-col-reverse md:items-end overflow-hidden rounded-xl kyrie min-h-[350px] md:min-h-0"
       >
         <img
           src="./src/image/affiche/Mr_Grimes_affiche.jpg"
-          class="absolute -z-10 w-full h-full object-contain bg-[#3F4204]"
+          class="absolute md:-z-10 w-full h-full object-contain bg-[#3F4204]"
           alt="kyrie irving image"
         />
-        <h2 class="uppercase hwt text-white p-3 title">#Mr Grimes</h2>
+        <h2
+          class="md:absolute uppercase hwt text-white px-3 sm:px-5 py-2 sm:py-3 title text-lg sm:text-xl md:text-base xl:text-lg z-10"
+        >
+          #Mr Grimes
+        </h2>
         <div
-          class="absolute top-0 description text-xl p-6 text-white backdrop-blur-lg bg-white/10 w-1/5 h-fit shadow-lg select-none rounded-lg"
+          class="description text-sm sm:text-base md:text-xl p-4 md:p-6 text-white backdrop-blur-lg bg-white/10 md:w-1/5 md:h-fit shadow-lg select-none rounded-lg md:absolute md:top-0"
         >
           <p>
-            Affiche conceptuelle jouant sur les identités multiples d’un même
-            personnage. L’image est déchirée en plusieurs bandes, mêlant couleur
+            Affiche conceptuelle jouant sur les identités multiples d'un même
+            personnage. L'image est déchirée en plusieurs bandes, mêlant couleur
             et noir et blanc pour symboliser le contraste entre la façade lisse
-            de Mr. Grimes et les univers qu’il traverse : enquête criminelle,
+            de Mr. Grimes et les univers qu'il traverse : enquête criminelle,
             décor paradisiaque, bibliothèque, salon feutré…
           </p>
         </div>
       </div>
     </main>
+
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="./src/javascript/image-full.js"></script>
     <script>
       lucide.createIcons();
+
+      // Mobile menu functionality
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        const spans = mobileMenuBtn.querySelectorAll("span");
+        if (!mobileMenu.classList.contains("hidden")) {
+          spans[0].style.transform = "rotate(45deg) translate(6px, 6px)";
+          spans[1].style.opacity = "0";
+          spans[2].style.transform = "rotate(-45deg) translate(6px, -6px)";
+        } else {
+          spans[0].style.transform = "none";
+          spans[1].style.opacity = "1";
+          spans[2].style.transform = "none";
+        }
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (
+          !mobileMenuBtn.contains(e.target) &&
+          !mobileMenu.contains(e.target)
+        ) {
+          mobileMenu.classList.add("hidden");
+          const spans = mobileMenuBtn.querySelectorAll("span");
+          spans[0].style.transform = "none";
+          spans[1].style.opacity = "1";
+          spans[2].style.transform = "none";
+        }
+      });
     </script>
   </body>
 </html>
